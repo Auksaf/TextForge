@@ -15,6 +15,13 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'success',
+    message: 'TextForge API is running'
+  });
+});
+
 app.use('/api/text', textRoutes);
 
 const PORT = process.env.PORT || 5000;
