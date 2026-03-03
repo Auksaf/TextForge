@@ -17,7 +17,7 @@ function processText(input) {
     .replace(/\bi've\b/g, "I've")
     .replace(/\bi'll\b/g, "I'll")
     .replace(/\bi'd\b/g, "I'd");
-  processed = processed.charAt(0).toUpperCase() + processed.slice(1);
+  processed = processed.replace(/[a-z]/, (match) => match.toUpperCase());
 
   return processed;
 }
