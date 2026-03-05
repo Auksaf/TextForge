@@ -3,7 +3,7 @@ function processText(input) {
 
   let processed = input;
 
-  processed = processed.replace(/''/g, "'");
+  processed = processed.replace(/'+(?=\s|$)/g, '');
   processed = processed.replace(/[\u{1F300}-\u{1FAFF}]/gu, '');
   processed = processed.replace(/[!?.,]{2,}/g, '');
   processed = processed.replace(/\s+/g, ' ').trim();
